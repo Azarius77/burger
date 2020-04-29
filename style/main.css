@@ -5,7 +5,6 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
 html {
   line-height: 1.15;
   /* 1 */
@@ -338,17 +337,56 @@ template {
   display: none;
 }
 
+@font-face {
+  font-family: "gagalinregular";
+  src: url("../../fonts/gagalin-regular-webfont.woff2") format("woff2"), url("../../fonts/gagalin-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "lifehackmedium";
+  src: url("../../fonts/lifehack_medium-webfont.woff2") format("woff2"), url("../../fonts/lifehack_medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ubuntu";
+  src: url("../../fonts/ubuntu-b-webfont.woff2") format("woff2"), url("../../fonts/ubuntu-b-webfont.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ubuntu";
+  src: url("../../fonts/ubuntu-light-webfont.woff2") format("woff2"), url("../../fonts/ubuntu-light-webfont.woff") format("woff");
+  font-weight: light;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ubuntu";
+  src: url("../../fonts/ubuntu-medium-webfont.woff2") format("woff2"), url("../../fonts/ubuntu-medium-webfont.woff") format("woff");
+  font-weight: medium;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ubunturegular";
+  src: url("../../fonts/ubuntu-regular-webfont.woff2") format("woff2"), url("../../fonts/ubuntu-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 html,
 body {
   height: 100%;
 }
 
 body {
+  font-family: "ubuntu", Helvetica, sans-serif;
+  font-weight: 300;
   font-size: 16px;
   line-height: 1.42;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
+  color: #2f3234;
 }
 
 .wrapper {
@@ -377,9 +415,32 @@ h5 h6 {
   font-weight: normal;
 }
 
-.container {
-  width: 95%;
-  margin: 0 auto;
+li {
+  list-style-type: none;
+}
+
+.section {
+  height: 100vh;
+  min-height: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-family: "gagalinregular", Helvetica, sans-serif;
+  font-size: 72px;
+  color: #f9b43b;
+  line-height: 1;
+}
+.title--color--black {
+  color: #2f3234;
+}
+.title--color--white {
+  color: #fff;
+}
+.title--centred {
+  text-align: center;
 }
 
 .header {
@@ -399,18 +460,274 @@ h5 h6 {
   margin-left: 15px;
 }
 
+.header__container {
+  display: flex;
+  justify-content: center;
+}
+
 .nav__list {
   display: flex;
   align-items: center;
 }
 
 .nav__item {
-  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
 }
 .nav__item:after {
   content: "";
   width: 4px;
   height: 4px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: block;
+  margin-left: 15px;
+}
+.nav__item:nth-last-child(2):after {
+  display: none;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.button {
+  padding: 12px 15px;
+  border-radius: 5px;
+  background-color: #e35028;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+}
+
+.promo {
+  background-image: url("../img/bg/main.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+.promo__container {
+  height: 100%;
+  display: flex;
+}
+
+.promo__content {
+  display: flex;
+  align-items: center;
+}
+
+.promo__title {
+  margin-left: 20px;
+}
+
+.promo__subtitle {
+  font-family: "lifehackmedium";
+  margin-top: 20px;
+  font-size: 56px;
+  color: #fff;
+  line-height: 1;
+}
+
+.promo__scroll-btn {
+  width: 29px;
+  height: 14px;
+  background-image: url("../../img/content/arrow-scroll.png");
+  display: block;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.reviews__list {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  padding: 0;
+}
+
+.reviews__item {
+  flex-basis: 25%;
+  height: 50%;
+  position: relative;
+  filter: grayscale(100%);
+}
+.reviews__item:hover .reviews__hover {
+  opacity: 1;
+}
+
+.reviews__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reviews__hover {
+  opacity: 0;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(47, 50, 52, 0.3);
+  padding: 50px 20px;
+  transition: opacity 0.4s;
+}
+
+.order {
+  background-image: url("../../img/bg/bg-form.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+.form__area {
+  width: 100%;
+  display: flex;
+  color: #fff;
+  font-family: "Ubuntu";
+  font-size: rem(14px);
+  font-weight: 300;
+  justify-content: space-between;
+}
+
+.form__block {
+  width: 48%;
+}
+
+.form__row {
+  margin-bottom: rem(15px);
+  display: flex;
+}
+
+.form__field {
+  width: 100%;
+  text-align: left;
+  margin-left: rem(20px);
+}
+.form__field:first-child {
+  margin-left: 0;
+}
+
+.form__field-title {
+  display: block;
+  margin-bottom: rem(7px);
+}
+
+.form__field-input {
+  outline: none;
+  width: 100%;
+  border: 2px #d1cfcb solid;
+  color: #2f3234;
+  line-height: 33px;
+  border-radius: 5px;
+  padding-left: rem(20px);
+  padding-right: rem(10px);
+  resize: none;
+}
+.form__field-input:focus {
+  border: 2px #f9b43b solid;
+}
+
+.form__radio-element,
+.form__checkbox-element {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-right: rem(20px);
+}
+
+.form__radio-input,
+.form__checkbox-input {
+  position: absolute;
+  top: 0px;
+  left: -9999px;
+}
+
+.form__radio-input:checked + .form__radio-fake::after {
+  width: rem(7px);
+  height: rem(7px);
+}
+
+.form__radio-fake {
+  position: relative;
+  display: inline-block;
+  width: rem(15px);
+  height: rem(15px);
+  vertical-align: middle;
+  border: 1px solid #cacaca;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: border 0.2s;
+  margin-right: rem(8px);
+}
+.form__radio-fake:after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  background-color: #e45028;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+
+.form__checkbox-fake {
+  position: relative;
+  display: inline-block;
+  width: rem(15px);
+  height: rem(15px);
+  vertical-align: middle;
+  background-color: #fff;
+  transition: border 0.2s;
+  margin-right: rem(8px);
+}
+
+.form__checkbox-input:checked + .form__checkbox-fake {
+  background-image: url("../img/order-section/checkbox.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+}
+
+.form-submit {
+  cursor: pointer;
+  margin-right: rem(20px);
+}
+
+.form__reset {
+  cursor: pointer;
+  color: #fff;
+  outline: none;
+  border: 0;
+  background: none;
+  font-weight: 300;
+}
+
+.form__answer {
+  position: relative;
+  background-color: #fff;
+  font-family: "Ubuntu";
+  font-weight: 300;
+  color: #2f3234;
+  text-align: center;
+  font-size: rem(14px);
+  border-radius: rem(5px);
+  padding: rem(25px) rem(20px);
+}
+
+.form__answer-title {
+  margin-bottom: rem(20px);
 }
 
 /*# sourceMappingURL=main.css.map */

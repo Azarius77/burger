@@ -4,11 +4,13 @@ body {
 }
 
 body {
+  @include ubuntu();
   font-size: 16px;
   line-height: 1.42;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
+  color: $black;
 
 }
 
@@ -27,6 +29,7 @@ body {
 
 p {
   margin: 0;
+
 }
 
 h1,
@@ -38,8 +41,35 @@ h5 h6 {
   font-weight: normal;
 }
 
-.container {
-  width: 95%;
+li {
+  list-style-type: none
+}
 
-  margin: 0 auto;
+.section {
+  height: 100vh;
+  min-height: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  @include gagalin();
+  font-size: 72px;
+  color: $yellow;
+  line-height: 1;
+
+  &--color {
+    &--black {
+      color: $black;
+    }
+
+    &--white {
+      color: $white;
+    }
+  }
+
+  &--centred {
+    text-align: center;
+  }
 }
