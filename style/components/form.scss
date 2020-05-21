@@ -46,16 +46,16 @@
 .form__field-input {
     outline: none;
     width: 100%;
-    border: 2px #d1cfcb solid;
+    border: rem(2px) #d1cfcb solid;
     color: $black;
-    line-height: 33px;
-    border-radius: 5px;
+    line-height: rem(33px);
+    border-radius: rem(5px);
     padding-left: rem(20px);
     padding-right: rem(10px);
     resize: none;
 
     &:focus {
-        border: 2px $yellow solid;
+        border: rem(2px) $yellow solid;
     }
 }
 
@@ -74,8 +74,8 @@
 .form__radio-input,
 .form__checkbox-input {
     position: absolute;
-    top: 0px;
-    left: -9999px;
+    top: rem(0px);
+    left: rem(-9999px);
 }
 
 .form__radio-input:checked+.form__radio-fake::after {
@@ -89,7 +89,7 @@
     width: rem(15px);
     height: rem(15px);
     vertical-align: middle;
-    border: 1px solid rgb(202, 202, 202);
+    border: rem(1px) solid rgb(202, 202, 202);
     border-radius: 50%;
     background-color: $white;
     transition: border 0.2s;
@@ -97,8 +97,8 @@
 
     &:after {
         content: "";
-        width: 0px;
-        height: 0px;
+        width: rem(0px);
+        height: rem(0px);
         background-color: $orange;
         position: absolute;
         top: 50%;

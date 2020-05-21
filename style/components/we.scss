@@ -1,0 +1,47 @@
+.we {
+  @include bg-image("/img/bg/bg-best.jpg", cover);
+  background-position: center center ;
+  position: relative;
+
+}
+
+.we__subtitle {
+  @include lifehack();
+  margin-top: rem(20px);
+  font-size: rem(24px);
+  color: $black;
+  line-height: 1;
+}
+
+.we__text {
+  @include ubuntu(light);
+  font-weight: light;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+.we__list {
+  display: flex;
+}
+
+.we__item {
+  display: flex;
+  flex-basis: rem(280px);
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.we__title {
+  padding-top: rem(134px);
+  padding-bottom: rem(56px);
+}
+
+.we__img {
+  padding-bottom: rem(20px);
+  color: $white;
+}
+
+.we__subtitle {
+  padding-bottom: rem(20px);
+}

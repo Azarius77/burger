@@ -1,0 +1,35 @@
+.team {
+  @include bg-image("/img/bg/bg-team.jpg", cover);
+  position: relative;
+
+  &__section {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    background: rgba(47, 50, 52, 0.93);
+    padding: 5% 2% 0 7%;
+    @include tablets {
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+
+  .section__title {
+    margin-bottom: 12%;
+  }
+  &__content-desc-title {
+    @include gagalin();
+  }
+  &__content-desc-content {
+    @include gagalin();
+  }
+  &__content {
+    display: flex;
+  }
+}

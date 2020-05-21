@@ -1,26 +1,33 @@
 @mixin gagalin() {
-    font-family: 'gagalinregular', Helvetica, sans-serif;
-
+  font-family: "gagalinregular", Helvetica, sans-serif;
 }
 
-@mixin ubuntu ($style: ligth) {
-    font-family: 'ubuntu', Helvetica, sans-serif;
+@mixin ubuntu($style: ligth) {
+  font-family: "ubuntu", Helvetica, sans-serif;
 
-    @if $style==ligth {
-        font-weight: 300;
-    }
+  @if $style==ligth {
+    font-weight: 300;
+  }
 
-    @if $style==medium {
-        font-weight: 500;
-    }
+  @if $style==medium {
+    font-weight: 500;
+  }
 
-    @if $style==bold {
-        font-weight: bold;
-    }
-
+  @if $style==bold {
+    font-weight: bold;
+  }
 }
 
 @mixin lifehack() {
-    font-family: 'lifehackmedium';
-
+  font-family: "lifehackmedium";
 }
+
+@mixin bg-image($url, $size) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: $size;
+}
+
+//media
+
+

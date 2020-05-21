@@ -1,14 +1,20 @@
 @import "settings/normalize";
+@import "settings/media";
 @import "settings/vars";
 @import "settings/mixins";
 @import "settings/fonts";
 @import "settings/base";
 
-//blocs
+//bloks
 @import "components/header";
+@import "components/hamburger-menu-link";
+@import "components/hero";
 @import "components/nav";
 @import "components/button";
-@import "components/promo";
 @import "components/reviews";
 @import "components/form";
 @import "components/fixed-menu";
+@import "components/we";
+@import "components/menu";
+@import "components/team";
+@import "components/team-acco";
